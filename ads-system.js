@@ -7,7 +7,7 @@
 
   var cfg;
   try {
-    var response = await fetch('/data/ads-config.json?v=' + Date.now(), { cache: 'no-store' });
+    var response = await fetch('/Kagurabachiraw/data/ads-config.json?v=' + Date.now(), { cache: 'no-store' });
     if (!response.ok) throw new Error('Ads configuration HTTP ' + response.status);
     cfg = await response.json();
   } catch (error) {

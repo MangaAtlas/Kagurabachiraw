@@ -29,6 +29,23 @@ footer{border-top:1px solid var(--line);padding:25px 0 38px;color:#8592a7;font-s
 <body>
 <header><div class="shell"><nav><a class="brand" href="/Kagurabachiraw/"><em>KAGURA</em>BACHI</a><div class="navlinks"><a href="#latest">Latest updates</a><a href="/Kagurabachiraw/admin/">Admin</a></div></nav></div></header>
 <section class="hero"><div class="shell hero-grid"><div><div class="eyebrow">MangaAtlas · Japan</div><h1>Kagurabachi<br>Raw & Updates</h1><p class="lead">A dedicated home for Kagurabachi chapter releases. New chapters will be listed here after you upload them through the admin panel.</p><div class="actions"><a class="btn primary" href="/Kagurabachiraw/admin/chapters.html">Upload new chapter</a><a class="btn secondary" href="/Kagurabachiraw/admin/">Open dashboard</a></div></div><img class="cover" src="https://raw.githubusercontent.com/MangaAtlasjpraw/Kagurabachiraw/main/manga-covers/kagurabacjp/cover.jpg" alt="Kagurabachi cover" loading="eager"></div></section>
-<main class="shell"><section class="section" id="latest"><div class="section-head"><div><div class="eyebrow">Chapter library</div><h2>Latest chapters</h2><p class="muted">The chapter list will populate automatically when you publish your first update.</p></div></div><div class="empty"><div class="empty-icon">📚</div><div><strong>No chapters published yet</strong><p>This site starts with a clean chapter library. Sign in through the admin panel, connect your GitHub token, then add a chapter and upload its page images.</p></div></div></section><section class="section"><div class="eyebrow">Site management</div><h2>Manage your releases</h2><p class="muted">Use the admin dashboard to manage manga entries, create and edit chapters, upload chapter images, and configure every ad placement. Your changes are saved to this GitHub repository.</p><div class="actions"><a class="btn secondary" href="/Kagurabachiraw/admin/chapters.html">Chapter manager</a><a class="btn secondary" href="/Kagurabachiraw/admin/ads-v3.html">Ads settings</a></div></section></main>
+<main class="shell"><section class="section" id="latest"><div class="section-head"><div><div class="eyebrow">Chapter library</div><h2>Latest chapters</h2><p class="muted">The chapter list will populate automatically when you publish your first update.</p></div></div><div id="chapter-list" class="empty"><div class="empty-icon">📚</div><div><strong>No chapters published yet</strong><p>This site starts with a clean chapter library. Sign in through the admin panel, connect your GitHub token, then add a chapter and upload its page images.</p></div></div></section><section class="section"><div class="eyebrow">Site management</div><h2>Manage your releases</h2><p class="muted">Use the admin dashboard to manage manga entries, create and edit chapters, upload chapter images, and configure every ad placement. Your changes are saved to this GitHub repository.</p><div class="actions"><a class="btn secondary" href="/Kagurabachiraw/admin/chapters.html">Chapter manager</a><a class="btn secondary" href="/Kagurabachiraw/admin/ads-v3.html">Ads settings</a></div></section></main>
+<script>
+(async function(){
+ const target=document.getElementById('chapter-list');if(!target)return;
+ try{
+  const base='/Kagurabachiraw/data/';
+  const files=await Promise.all(['content.json','manual-chapters.json','upcoming-chapters.json'].map(p=>fetch(base+p+'?v='+Date.now(),{cache:'no-store'}).then(r=>r.ok?r.json():{})));
+  const manga=files[0].mangas||[];
+  const chapters=[...(files[0].chapters||[]),...(files[1].chapters||[]),...(files[2].chapters||[])];
+  const names=Object.fromEntries(manga.map(m=>[m.id,m.title]));
+  chapters.sort((a,b)=>String(b.updated_at||b.created_at||'').localeCompare(String(a.updated_at||a.created_at||''))||Number(b.number||0)-Number(a.number||0));
+  if(!chapters.length)return;
+  target.className='chapter-grid';
+  target.innerHTML=chapters.map(c=>'<a class="chapter-card" href="/Kagurabachiraw/chapter.html?slug='+encodeURIComponent(c.slug||'')+'"><span>'+String(names[c.mangaId]||'Kagurabachi').replace(/[&<>"]/g,'')+'</span><strong>'+String(c.title||('Chapter '+(c.number||''))).replace(/[&<>"]/g,'')+'</strong><small>Chapter '+String(c.number||'').replace(/[&<>"]/g,'')+' · Read chapter →</small></a>').join('');
+ }catch(e){console.warn('Chapter list could not load',e)}
+})();
+</script>
+<style>.chapter-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}.chapter-card{display:flex;flex-direction:column;gap:8px;padding:18px;border:1px solid #344158;background:#111725;border-radius:12px}.chapter-card span,.chapter-card small{color:#9ca9bd;font-size:12px}.chapter-card strong{font-size:15px}@media(max-width:600px){.chapter-grid{grid-template-columns:1fr}}</style>
 <footer><div class="shell">© MangaAtlas · Kagurabachi dedicated site</div></footer>
 </body></html>

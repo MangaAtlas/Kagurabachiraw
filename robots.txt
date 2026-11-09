@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /admin/
 
-Sitemap: https://mangaatlas.github.io/Kagurabachiraw/sitemap.xml
+Sitemap: https://mangarawatlas.github.io/Kagurabachiraw/sitemap.xml

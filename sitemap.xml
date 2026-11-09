@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <url>
-    <loc>https://mangaatlas.github.io/Kagurabachiraw/</loc>
+    <loc>https://mangarawatlas.github.io/Kagurabachiraw/</loc>
     <lastmod>2026-11-01</lastmod>
-    <image:image><image:loc>https://mangaatlas.github.io/Kagurabachiraw/manga-covers/kagurabacjp/cover.jpg</image:loc><image:title>kagurabacjp manga cover</image:title></image:image>
+    <image:image><image:loc>https://mangarawatlas.github.io/Kagurabachiraw/manga-covers/kagurabacjp/cover.jpg</image:loc><image:title>kagurabacjp manga cover</image:title></image:image>
   </url>
-<url><loc>https://mangaatlas.github.io/Kagurabachiraw/manga.html?slug=kagurabacjp</loc></url>
+<url><loc>https://mangarawatlas.github.io/Kagurabachiraw/manga.html?slug=kagurabacjp</loc></url>
   <url>
-    <loc>https://mangaatlas.github.io/Kagurabachiraw/chapter.html?slug=Kagurabacjp-raw-jap-137</loc>
+    <loc>https://mangarawatlas.github.io/Kagurabachiraw/chapter.html?slug=Kagurabacjp-raw-jap-137</loc>
     <lastmod>2026-10-31</lastmod>
     <image:image><image:loc>https://raw.githubusercontent.com/MangaAtlas/Kagurabachiraw/main/chapter-images/Kagurabacjp/chapter-Kagurabacjp-raw-jap-137/.upload-1793479746660/0001-1.jpg</image:loc></image:image>
     <image:image><image:loc>https://raw.githubusercontent.com/MangaAtlas/Kagurabachiraw/main/chapter-images/Kagurabacjp/chapter-Kagurabacjp-raw-jap-137/.upload-1793479746660/0002-2.jpg</image:loc></image:image>
@@ -26,7 +26,7 @@
     <image:image><image:loc>https://raw.githubusercontent.com/MangaAtlas/Kagurabachiraw/main/chapter-images/Kagurabacjp/chapter-Kagurabacjp-raw-jap-137/.upload-1793479746660/0015-15.jpg</image:loc></image:image>
   </url>
   <url>
-    <loc>https://mangaatlas.github.io/Kagurabachiraw/chapter.html?slug=Kagurabacjp-raw-eng-137</loc>
+    <loc>https://mangarawatlas.github.io/Kagurabachiraw/chapter.html?slug=Kagurabacjp-raw-eng-137</loc>
     <lastmod>2026-10-31</lastmod>
     <image:image><image:loc>https://raw.githubusercontent.com/MangaAtlas/Kagurabachiraw/main/chapter-images/Kagurabacjp/chapter-Kagurabacjp-raw-eng-137/.upload-1793479850253/0001-1.jpg</image:loc></image:image>
     <image:image><image:loc>https://raw.githubusercontent.com/MangaAtlas/Kagurabachiraw/main/chapter-images/Kagurabacjp/chapter-Kagurabacjp-raw-eng-137/.upload-1793479850253/0002-2.jpg</image:loc></image:image>
